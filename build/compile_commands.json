@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/Users/arseniikvachan/CRoot/Tutorials/C++/CustomDataStructures/build/Release",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/arseniikvachan/CRoot/Tutorials/C++/CustomDataStructures/include -I/Users/arseniikvachan/CRoot/Tutorials/C++/CustomDataStructures/templates -O3 -DNDEBUG -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/CDS.dir/main.cpp.o -c /Users/arseniikvachan/CRoot/Tutorials/C++/CustomDataStructures/main.cpp",
+  "file": "/Users/arseniikvachan/CRoot/Tutorials/C++/CustomDataStructures/main.cpp",
+  "output": "CMakeFiles/CDS.dir/main.cpp.o"
+}
+]

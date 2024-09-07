@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+if [ "$1" = "--debug" ]; then
+    echo "Building project in Debug mode"
+    cd build/Debug
+    cmake -DCMAKE_BUILD_TYPE=Debug ../..
+    make
+    cp -L ./compile_commands.json ../compile_commands.json
+    echo " "
+    ./CDS
+elif [ "$1" = "--test" ]; then
+    echo "Running tests..." 
+elif [ "$1" = "--assembly" ]; then
+    echo "Building project in Debug mode with Assemly generation"
+    cd build/Debug
+    cmake -DCMAKE_BUILD_TYPE=Debug ../..
+    make main.s
+    echo " "
+else
+    echo "Building project in Release mode"
+    cd build/Release
+    cmake -DCMAKE_BUILD_TYPE=Release ../..
+    make
+    cp -L ./compile_commands.json ../compile_commands.json
+    echo " "
+    ./CDS
+fi
