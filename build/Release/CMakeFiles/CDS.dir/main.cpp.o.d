@@ -1,6 +1,5 @@
 CMakeFiles/CDS.dir/main.cpp.o: \
   /Users/arseniikvachan/CRoot/Tutorials/C++/CustomDataStructures/main.cpp \
-  /Users/arseniikvachan/CRoot/Tutorials/C++/CustomDataStructures/include/CDS_List.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__assert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__config \
@@ -824,6 +823,7 @@ CMakeFiles/CDS.dir/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_types/_nl_item.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__locale_dir/locale_base_api/bsd_locale_defaults.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/cstdarg \
+  /Users/arseniikvachan/CRoot/Tutorials/C++/CustomDataStructures/include/CDS_List.hpp \
   /Users/arseniikvachan/CRoot/Tutorials/C++/CustomDataStructures/templates/CDS_List.ipp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/cassert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/assert.h

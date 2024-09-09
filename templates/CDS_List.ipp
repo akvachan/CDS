@@ -15,7 +15,8 @@ CDS_List<T>::CDS_List() : _Size(0), _Capacity(_Init::_INITIAL) {
 // Destructor
 template <class T> CDS_List<T>::~CDS_List() {
   this->Clear();
-  ::operator delete(_List, this->GetCapacity() * sizeof(T));
+  if (this->GetData())
+    ::operator delete(_List, this->GetCapacity() * sizeof(T));
 }
 
 // Getters
@@ -32,7 +33,7 @@ template <class T> const size_t CDS_List<T>::GetCapacity() const {
 }
 
 template <class T> T &CDS_List<T>::GetElement(const size_t index) const {
-  assertm(this->GetSize() <= index, "Index out of bounds");
+  assertm(index < this->GetSize(), "Index out of bounds");
   return this->_List[index];
 }
 
@@ -67,7 +68,8 @@ template <class T> void CDS_List<T>::Reallocate(const size_t newCap) {
     this->GetElement(i).~T();
   }
 
-  ::operator delete(_List, this->GetCapacity() * sizeof(T));
+  if (this->GetData())
+    ::operator delete(_List, this->GetCapacity() * sizeof(T));
 
   this->SetData(newList);
   this->SetCapacity(newCap);
@@ -83,9 +85,9 @@ template <class T> void CDS_List<T>::Fill(const T &elem) {
 // Swap
 template <class T>
 void CDS_List<T>::Swap(const size_t &lhs, const size_t &rhs) {
-  size_t temp = this->SetElement(lhs);
-  this->SetElement(lhs) = this->SetElement(rhs);
-  this->SetElement(rhs) = temp;
+  T temp = std::move(this->GetElement(lhs)); // Move element at lhs to temp
+  this->SetElement(lhs, std::move(this->GetElement(rhs))); // Move rhs to lhs
+  this->SetElement(rhs, std::move(temp)); // Move temp (original lhs) to rhs
 }
 
 // Append
@@ -170,4 +172,64 @@ std::ostream &operator<<(std::ostream &stream, const CDS_List<U> &array) {
   }
   stream << "]";
   return stream;
+}
+
+// Iterator Constructor
+template <class T>
+CDS_List<T>::iterator::iterator(pointer inPointer) : _pointer(inPointer) {}
+
+// Iterator Overloads
+template <class T>
+typename CDS_List<T>::iterator::reference
+CDS_List<T>::iterator::operator*() const {
+  return *this->_pointer;
+}
+
+template <class T>
+typename CDS_List<T>::iterator::pointer CDS_List<T>::iterator::operator->() {
+  return this->_pointer;
+}
+
+template <class T>
+typename CDS_List<T>::iterator &CDS_List<T>::iterator::operator++() {
+  ++_pointer;
+  return *this;
+}
+
+template <class T>
+typename CDS_List<T>::iterator CDS_List<T>::iterator::operator++(int) {
+  iterator temp = *this;
+  ++_pointer;
+  return temp;
+}
+
+template <class T>
+typename CDS_List<T>::iterator &CDS_List<T>::iterator::operator--() {
+  --_pointer;
+  return *this;
+}
+
+template <class T>
+typename CDS_List<T>::iterator CDS_List<T>::iterator::operator--(int) {
+  iterator temp = *this;
+  --_pointer;
+  return temp;
+}
+
+template <class T>
+bool CDS_List<T>::iterator::operator==(const CDS_List<T>::iterator &other) const {
+  return this->_pointer == other._pointer;
+}
+
+template <class T>
+bool CDS_List<T>::iterator::operator!=(const CDS_List<T>::iterator &other) const {
+  return this->_pointer != other._pointer;
+}
+
+template <class T> typename CDS_List<T>::iterator CDS_List<T>::end() {
+  return iterator(this->GetData() + this->GetSize());
+}
+
+template <class T> typename CDS_List<T>::iterator CDS_List<T>::begin() {
+  return iterator(this->GetData());
 }
