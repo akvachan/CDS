@@ -92,6 +92,7 @@ CDS_EXTERNAL_OBJECTS =
 
 CDS: CMakeFiles/CDS.dir/main.cpp.o
 CDS: CMakeFiles/CDS.dir/build.make
+CDS: src/libCDSLIB.a
 CDS: CMakeFiles/CDS.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/arseniikvachan/CRoot/Tutorials/C++/CustomDataStructures/build/Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable CDS"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CDS.dir/link.txt --verbose=$(VERBOSE)

@@ -129,6 +129,19 @@ CDS/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CDS.dir/build.make CMakeFiles/CDS.dir/build
 .PHONY : CDS/fast
 
+#=============================================================================
+# Target rules for targets named CDSLIB
+
+# Build rule for target.
+CDSLIB: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CDSLIB
+.PHONY : CDSLIB
+
+# fast build rule for target.
+CDSLIB/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/CDSLIB.dir/build.make src/CMakeFiles/CDSLIB.dir/build
+.PHONY : CDSLIB/fast
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -162,6 +175,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... CDS"
+	@echo "... CDSLIB"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

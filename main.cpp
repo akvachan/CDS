@@ -2,7 +2,7 @@
 #include <iterator>
 #include <tuple>
 
-#include "CDS_List.hpp"
+#include "CDS_SimpleHashMap.hpp"
 
 /*
 int main() {
@@ -68,19 +68,6 @@ int main() {
 */
 
 int main() {
-
-  CDS_List<int> vals;
-
-  vals.Append(1);
-  vals.Append(2);
-  vals.Append(3);
-
-  for (CDS_List<int>::iterator it = vals.begin(); it != vals.end(); it++) {
-    std::cout << *it << '\n';
-  }
-
-  for (int myint : vals) {
-    std::cout << myint << '\n';
-  }
-
+  CDS_SimpleHashMap map;
+  map.Print();
 }

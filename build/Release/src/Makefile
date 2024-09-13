@@ -116,6 +116,44 @@ depend:
 	cd /Users/arseniikvachan/CRoot/Tutorials/C++/CustomDataStructures/build/Release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+src/CMakeFiles/CDSLIB.dir/rule:
+	cd /Users/arseniikvachan/CRoot/Tutorials/C++/CustomDataStructures/build/Release && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/CDSLIB.dir/rule
+.PHONY : src/CMakeFiles/CDSLIB.dir/rule
+
+# Convenience name for target.
+CDSLIB: src/CMakeFiles/CDSLIB.dir/rule
+.PHONY : CDSLIB
+
+# fast build rule for target.
+CDSLIB/fast:
+	cd /Users/arseniikvachan/CRoot/Tutorials/C++/CustomDataStructures/build/Release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CDSLIB.dir/build.make src/CMakeFiles/CDSLIB.dir/build
+.PHONY : CDSLIB/fast
+
+CDS_SimpleHashMap.o: CDS_SimpleHashMap.cpp.o
+.PHONY : CDS_SimpleHashMap.o
+
+# target to build an object file
+CDS_SimpleHashMap.cpp.o:
+	cd /Users/arseniikvachan/CRoot/Tutorials/C++/CustomDataStructures/build/Release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CDSLIB.dir/build.make src/CMakeFiles/CDSLIB.dir/CDS_SimpleHashMap.cpp.o
+.PHONY : CDS_SimpleHashMap.cpp.o
+
+CDS_SimpleHashMap.i: CDS_SimpleHashMap.cpp.i
+.PHONY : CDS_SimpleHashMap.i
+
+# target to preprocess a source file
+CDS_SimpleHashMap.cpp.i:
+	cd /Users/arseniikvachan/CRoot/Tutorials/C++/CustomDataStructures/build/Release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CDSLIB.dir/build.make src/CMakeFiles/CDSLIB.dir/CDS_SimpleHashMap.cpp.i
+.PHONY : CDS_SimpleHashMap.cpp.i
+
+CDS_SimpleHashMap.s: CDS_SimpleHashMap.cpp.s
+.PHONY : CDS_SimpleHashMap.s
+
+# target to generate assembly for a file
+CDS_SimpleHashMap.cpp.s:
+	cd /Users/arseniikvachan/CRoot/Tutorials/C++/CustomDataStructures/build/Release && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/CDSLIB.dir/build.make src/CMakeFiles/CDSLIB.dir/CDS_SimpleHashMap.cpp.s
+.PHONY : CDS_SimpleHashMap.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -124,6 +162,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... CDSLIB"
+	@echo "... CDS_SimpleHashMap.o"
+	@echo "... CDS_SimpleHashMap.i"
+	@echo "... CDS_SimpleHashMap.s"
 .PHONY : help
 
 

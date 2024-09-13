@@ -80,7 +80,7 @@ clean: src/clean
 # Directory level rules for directory src
 
 # Recursive "all" directory target.
-src/all:
+src/all: src/CMakeFiles/CDSLIB.dir/all
 .PHONY : src/all
 
 # Recursive "preinstall" directory target.
@@ -88,14 +88,14 @@ src/preinstall:
 .PHONY : src/preinstall
 
 # Recursive "clean" directory target.
-src/clean:
+src/clean: src/CMakeFiles/CDSLIB.dir/clean
 .PHONY : src/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/CDS.dir
 
 # All Build rule for target.
-CMakeFiles/CDS.dir/all:
+CMakeFiles/CDS.dir/all: src/CMakeFiles/CDSLIB.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CDS.dir/build.make CMakeFiles/CDS.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CDS.dir/build.make CMakeFiles/CDS.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/arseniikvachan/CRoot/Tutorials/C++/CustomDataStructures/build/Release/CMakeFiles --progress-num=1,2 "Built target CDS"
@@ -103,7 +103,7 @@ CMakeFiles/CDS.dir/all:
 
 # Build rule for subdir invocation for target.
 CMakeFiles/CDS.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/arseniikvachan/CRoot/Tutorials/C++/CustomDataStructures/build/Release/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/arseniikvachan/CRoot/Tutorials/C++/CustomDataStructures/build/Release/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/CDS.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/arseniikvachan/CRoot/Tutorials/C++/CustomDataStructures/build/Release/CMakeFiles 0
 .PHONY : CMakeFiles/CDS.dir/rule
@@ -116,6 +116,32 @@ CDS: CMakeFiles/CDS.dir/rule
 CMakeFiles/CDS.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CDS.dir/build.make CMakeFiles/CDS.dir/clean
 .PHONY : CMakeFiles/CDS.dir/clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/CDSLIB.dir
+
+# All Build rule for target.
+src/CMakeFiles/CDSLIB.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/CDSLIB.dir/build.make src/CMakeFiles/CDSLIB.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/CDSLIB.dir/build.make src/CMakeFiles/CDSLIB.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/arseniikvachan/CRoot/Tutorials/C++/CustomDataStructures/build/Release/CMakeFiles --progress-num=3,4 "Built target CDSLIB"
+.PHONY : src/CMakeFiles/CDSLIB.dir/all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/CDSLIB.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/arseniikvachan/CRoot/Tutorials/C++/CustomDataStructures/build/Release/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/CDSLIB.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/arseniikvachan/CRoot/Tutorials/C++/CustomDataStructures/build/Release/CMakeFiles 0
+.PHONY : src/CMakeFiles/CDSLIB.dir/rule
+
+# Convenience name for target.
+CDSLIB: src/CMakeFiles/CDSLIB.dir/rule
+.PHONY : CDSLIB
+
+# clean rule for target.
+src/CMakeFiles/CDSLIB.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/CDSLIB.dir/build.make src/CMakeFiles/CDSLIB.dir/clean
+.PHONY : src/CMakeFiles/CDSLIB.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
